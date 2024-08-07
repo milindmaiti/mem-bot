@@ -1,8 +1,1 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Front end code for membot. Displays the different functions (add document, search for documents, chat with bot, generate user profile) in an elegant UI. To run, install all package with npm i. Then run the code in the backend repo and then run npm run dev. If you are running the backend on a port other than 5000, you may need to edit the post requests (not recommended). In the future, I'd like to clean up the code a bit, and separate components into separate files, add icons to everything and improve the layout.

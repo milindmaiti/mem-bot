@@ -1,9 +1,8 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import axios from 'axios';
 
+// main app component for the whole page
 function App() {
   const [documents, setDocuments] = useState([]);
   const [messages, setMessages] = useState([])
@@ -27,6 +26,7 @@ function App() {
   )
 }
 
+// Main chabot card in the middle
 function DisplayMessages({ messages, setMessages }) {
   const [query, setQuery] = useState("");
 
@@ -83,12 +83,13 @@ function DisplayMessages({ messages, setMessages }) {
 
   )
 }
+
+// component in top left with new chat button and title of current chat
 function NewChat({ documents, setDocuments, setMessages }) {
   const [title, setTitle] = useState("");
 
   async function handleSubmit(e) {
     e.preventDefault();
-    console.log(title);
 
     const response = await axios.post('http://127.0.0.1:5000/new_conversation');
     setDocuments([...documents, { [title]: response.data }]);
@@ -107,6 +108,7 @@ function NewChat({ documents, setDocuments, setMessages }) {
   );
 }
 
+// add docment component on right side of screen
 function AddDoc({ documents, setDocuments }) {
   const [text, setText] = useState("");
   const [docTitle, setDocTitle] = useState("");
@@ -142,6 +144,7 @@ function AddDoc({ documents, setDocuments }) {
   );
 }
 
+// search document on the right side bar
 function SearchDocument() {
   const [query, setQuery] = useState("");
   const [search, setSearch] = useState("");
@@ -172,6 +175,7 @@ function SearchDocument() {
 
 }
 
+// function to create user profile on right side bottom
 function UserProfile() {
   const [profile, setProfile] = useState("");
   async function handleSubmit(e) {
@@ -190,11 +194,11 @@ function UserProfile() {
 
 }
 
+// buttons to remove documents on left sidebar
 function RemoveDocuments({ documents, setDocuments }) {
   async function handleSubmit(e) {
     e.preventDefault();
     var foundTitle = e.nativeEvent.submitter.innerText;
-    console.log(e.nativeEvent.submitter.innerText);
     var ix = 0;
     for (var i = 0; i < documents.length; i++) {
       if (foundTitle == Object.keys(documents[i])[0]) {
