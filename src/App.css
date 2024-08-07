@@ -1,0 +1,44 @@
+.grid-container {
+  background-color: #eee;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  height: 100vh;
+  gap: 5px;
+}
+
+.grid-container>div {
+  background-color: #FFDEE9;
+  background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
+
+  /* background-color: #ccc; */
+  text-align: center;
+  border: 1px solid #777;
+  padding: 20px;
+}
+
+.grid-container>div:nth-child(2) {
+  grid-column: span 3;
+}
+
+.scrollable {
+  background-color: white;
+  min-height: 35vh;
+  max-height: 35vh;
+  margin-bottom: 10px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 90vh;
+  max-height: 90vh;
+}
+
+.button {
+  display: block;
+  width: 100%;
+}
